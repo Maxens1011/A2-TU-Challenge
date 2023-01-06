@@ -4,7 +4,6 @@ namespace TU_Challenge.Tests
     /// Exercice 2, cette fois-ci on fait un peu d'algorythme jouant avec des boucles
     /// Pour rendre les tests visible, tu dois passer le "#if false" à "#if true" ligne 7
     /// </summary>
-#if false
     public class Test2_Strings
     {
         [Test]
@@ -45,6 +44,7 @@ namespace TU_Challenge.Tests
                 MyStringImplementation.MixString(a, b);
             });
         }
+#if false
 
         /// <summary>
         /// Interdiction d'utiliser ToLower de la string.
@@ -108,7 +108,7 @@ namespace TU_Challenge.Tests
             string result = MyStringImplementation.ToCesarCode(input, offset);
             Assert.That(result, Is.EqualTo(expected));
         }
+#endif
 
     }
-#endif
 }

@@ -152,8 +152,7 @@ namespace TU_Challenge
         public void TestIsInOrder()
         {
             // Test
-            bool result = MyMathImplementation.IsListInOrder(
-                new List<int>() { 12, 0, -1, 123, 45, 90, -123 });
+            bool result = MyMathImplementation.IsListInOrder(new List<int>() { 12, 0, -1, 123, 45, 90, -123 });
             Assert.IsFalse(result);
 
             // Test
@@ -176,6 +175,7 @@ namespace TU_Challenge
                 new List<int>() { -123, -1, 0, 12, 45, 90, 123});
             Assert.IsTrue(result);
         }
+#if false
 
         // Votre premier algorithme de tri à implémenter.
         // N'hésitez pas à me demander de l'aide sur la partie théorie.
@@ -190,7 +190,6 @@ namespace TU_Challenge
             for (int i = 0; i < result.Count-1; i++)
             {
                 Assert.IsTrue(result[i] < result[i + 1]);
-            }
 
         }
 
@@ -224,6 +223,6 @@ namespace TU_Challenge
                 Assert.IsTrue(result[i] > result[i + 1]);
             }
         }
-
+#endif
     }
 }

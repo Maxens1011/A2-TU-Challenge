@@ -31,8 +31,8 @@ namespace TU_Challenge
         }
 
         public static bool IsDivisible(int a, int b)
-        { 
-            return (a / b) % 1 == 0;
+        {
+            return a % b == 0;
         }
 
         public static bool IsPrimary(int a)
@@ -55,23 +55,23 @@ namespace TU_Challenge
         public static List<int> GetAllPrimary(int a)
         {
             List<int> primeNumbersList = new List<int>();
-            for(int i = 0; i < a; i++)
+            for (int i = 1; i <= a; i++)
             {
-                if(IsPrimary(i))
-                primeNumbersList.Add(i);
+                if (IsPrimary(i))
+                    primeNumbersList.Add(i);
             }
             return primeNumbersList;
         }
 
         public static int Power2(int a)
         {
-            return a*a;
+            return a * a;
         }
 
         public static int Power(int a, int b)
         {
-            int result = a;
-            for(int i = 0; i < b; i++)
+            int result = 1;
+            for (int i = 0; i < b; i++)
             {
                 result *= a;
             }
@@ -82,17 +82,36 @@ namespace TU_Challenge
         {
             if (a < b) return 1;
             else if (a > b) return -1;
-            else if (a == b) return 0;
+            else return 0;
         }
 
         public static bool IsListInOrder(List<int> list)
         {
-            throw new NotImplementedException();
+            if (list.Count == 1) return true;
+            else for (int i = 1; i < list.Count; i++)
+                {
+                    if (IsInOrder(list[i - 1], list[i]) == -1) return false;
+                }
+            return true;
         }
 
         public static object Sort(List<int> toSort)
         {
-            throw new NotImplementedException();
+            List<int> sortedList = new List<int>();
+            int listExpectedCount = toSort.Count;
+            int currentLowest;
+            while (sortedList.Count != listExpectedCount)
+            {
+                currentLowest = toSort[0];
+                for(int i = 1; i < toSort.Count; i++)
+                {
+                    if (currentLowest > toSort[i]);
+                    currentLowest = toSort[1];
+                }
+                sortedList.Add(currentLowest);
+                // UTILISER ITERATEUR POUR CORRECTEMENT RETIRER LE PLUS BAS NOMBRE DE LA LISTE
+            }
+            return sortedList;
         }
 
         public static object GenericSort(List<int> toSort, Func<int, int, bool> isInOrder)
